@@ -1,16 +1,9 @@
 {
-  "summary": {
-    "meeting_summary": "The meeting discussed the assignment of a new feature development task for the reporting dashboard. The goal is to enhance the dashboard by adding better filtering options, custom report generation, and export functionality. The feature should be simple, intuitive, and optimized for performance, especially with larger datasets. The deadline for the feature is ideally the next release cycle in three weeks. Sarah will start with the back-end work, review the current code and API endpoints, and integrate the new feature with the existing database and querying system. The employer will provide UI/UX guidelines and mockups. Progress updates and midweek check-ins were agreed upon."
-  },
-  "todo_work": {
-    "action_items": [
-      "Start back-end work for the new reporting dashboard feature.",
-      "Review current code and API endpoints for integration.",
-      "Implement filtering options (date ranges, product categories, customer segments).",
-      "Develop custom report generation and export functionality (CSV, PDF).",
-      "Optimize performance for larger datasets.",
-      "Follow UI/UX guidelines and mockups provided by the design team.",
-      "Keep the employer updated on progress and raise any blockers."
-    ]
-  }
+  "summary": "The meeting discussed the tasks required to finalize the quarterly report. John was assigned to gather and compile sales data using the shared template, coordinate with Sean Mukherjee for marketing input, and update the project management tool with proper task assignments. All tasks need to be completed by Friday, with a final review before submission.",
+  "todo_work": [
+    "Gather and compile sales data from the last quarter using the shared template and send it to the finance team by Friday.",
+    "Coordinate with Sean Mukherjee to get updated graphics and charts for the quarterly presentation by tomorrow.",
+    "Update the project management tool with proper task assignments by the end of the day.",
+    "Send an update to the meeting organizer once all tasks are completed for a final review."
+  ]
 }
