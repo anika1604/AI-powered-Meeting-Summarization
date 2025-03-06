@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Meeting Assistant</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo1.png') }}">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+            <h1>AI Meeting Summarizer</h1>
+        </div>
+        <p>Upload a recording or record live to get instant transcriptions, summaries, and action items!</p>
+         <!-- Dark Mode Toggle Button -->
+        <button id="darkModeToggle" class="dark-mode-toggle">🌙 Dark Mode</button>
+    </header>
+
+    <!-- Upload & Live Recording Section -->
+    <div class="upload-record-container">
+        
+        <!-- Live Recording Section -->
+        <div class="container record-box">
+            <h2>Live Meeting Recorder</h2>
+            <p>Capture your meeting in real-time and let AI do the rest!</p>
+            <button id="startRecording">Start Recording</button>
+            <button id="stopRecording" disabled>Stop Recording</button>
+            <p id="recordingStatus">Not Recording</p>
+        </div>
+
+        <!-- Upload Section -->
+        <div class="container upload-box">
+            <h2>Upload Meeting Audio</h2>
+            <p>Already have a recorded meeting? Upload and get AI-powered insights!</p>
+            <input type="file" id="fileInput">
+        </div>
+    </div>
+
+    <!-- AI-Generated Insights -->
+    <div class="insights-container">
+        <div class="box">
+            <h3>Transcription</h3>
+            <div class="info">Shows full text of the meeting</div>
+            <div class="generated">
+                <p id="transcriptionText">Waiting for transcription...</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>Summary</h3>
+            <div class="info">Condensed key points of the meeting</div>
+            <div class="generated">
+                <!-- <p id="summaryText">No summary available yet.</p> -->
+                <p>{{ data["summary"]["meeting_summary"] }}</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>Action Items</h3>
+            <div class="info">Key tasks assigned from the meeting</div>
+            <div class="generated" id="actions">
+                <ul id="actionsList">
+                    <!-- <li>No action items yet.</li> -->
+                    {% for jobs in data["todo_work"]["action_items"] %}
+                        <li>{{ jobs }}</li>
+                        <br>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
