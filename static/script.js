@@ -6,14 +6,14 @@ document.getElementById("fileInput").addEventListener("change", function () {
     transcriptionText.innerText = "Processing audio...";
     summaryText.innerText = "Generating summary...";
 
-    setTimeout(() => {
-        transcriptionText.innerText = "Client: We need to finalize the report by Friday. Manager: Okay, I'll assign tasks.";
-        summaryText.innerText = "Key Decision: Report due Friday. Action Item: Manager to assign tasks.";
+    // setTimeout(() => {
+    //     transcriptionText.innerText = "Client: We need to finalize the report by Friday. Manager: Okay, I'll assign tasks.";
+    //     summaryText.innerText = "Key Decision: Report due Friday. Action Item: Manager to assign tasks.";
 
-        // Update Action Items
-        let actionsList = document.getElementById("actionsList");
-        actionsList.innerHTML = "<li>Manager: Assign report tasks by Friday</li>";
-    }, 3000);
+    //     // Update Action Items
+    //     let actionsList = document.getElementById("actionsList");
+    //     actionsList.innerHTML = "<li>Manager: Assign report tasks by Friday</li>";
+    // }, 3000);
 });
 
 // Live Recording Feature
@@ -54,4 +54,27 @@ darkModeToggle.addEventListener("click", () => {
     } else {
         darkModeToggle.innerText = "🌙 Dark Mode";
     }
+});
+
+document.getElementById("submit").addEventListener("click", function(event){
+    event.preventDefault();  // Prevent default form submission
+
+    var fileInput = document.getElementById("fileInput");
+    var formData = new FormData();
+    formData.append("file", fileInput.files[0]);
+
+    // Send the file to Flask server
+    fetch("/upload", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);  // Handle the response from Flask
+        // alert("File uploaded successfully!");
+        window.location.reload();
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
 });

@@ -1,28 +1,27 @@
 <think>
-Alright, I need to generate a JSON response based on the meeting provided. The user has specified the schema with "summary" and "todo_work" keys.
+Alright, so the user wants me to generate a meeting summary in a specific JSON format. They provided a conversation between two people, John and someone else, discussing tasks related to a quarterly report. The JSON should have two keys: "summary" and "todo_work". 
 
-First, I'll read through the meeting notes to extract the main points. The employer assigned Sarah to develop a new reporting dashboard feature with specific requirements like filtering, custom reports, and export options. They also mentioned deadlines and the need for performance optimization.
+First, I need to extract the key points from the meeting. They talked about finalizing the quarterly report and several tasks John needs to do. The main points are compiling sales data, coordinating with Sean from marketing, and updating the project management tool.
 
-For the summary, I'll condense these points into a concise paragraph. Then, I'll list the action items under "todo_work", making sure to include starting the back-end work, reviewing code, integrating with existing APIs, following design guidelines, and keeping the employer updated.
+Next, for the "summary" field, I should condense these points into a concise paragraph. It should mention the purpose of the meeting, the main tasks, and the deadline.
 
-I should ensure that the JSON doesn't include any backslashes or special characters as per the user's note. Finally, I'll structure the JSON correctly, avoiding any markdown formatting.
+Then, the "todo_work" should be a list of actionable items. I need to list each task clearly and specifically, ensuring each one is a separate string in the array. I should avoid any extra information, just the tasks as mentioned.
+
+I also need to make sure the JSON doesn't include any extra keys beyond what's specified. So, I'll structure it exactly as the user outlined, with "summary" and "todo_work" as top-level keys.
+
+I should double-check the tasks to ensure they're all covered: compiling sales data, coordinating with Sean, updating the project tool, and sending an update after completion. Each task should be a separate entry in the "todo_work" array.
+
+Finally, I'll format the JSON correctly, ensuring proper syntax with commas and brackets. No markdown, just plain JSON as the user requested.
 </think>
 
 ```json
 {
-  "summary": {
-    "meeting_summary": "The meeting discussed the assignment of a new feature development task for the reporting dashboard. The goal is to enhance the dashboard by adding better filtering options, custom report generation, and export functionality. The feature should be simple, intuitive, and optimized for performance, especially with larger datasets. The deadline for the feature is ideally the next release cycle in three weeks. Sarah will start with the back-end work, review the current code and API endpoints, and integrate the new feature with the existing database and querying system. The employer will provide UI/UX guidelines and mockups. Progress updates and midweek check-ins were agreed upon."
-  },
-  "todo_work": {
-    "action_items": [
-      "Start back-end work for the new reporting dashboard feature.",
-      "Review current code and API endpoints for integration.",
-      "Implement filtering options (date ranges, product categories, customer segments).",
-      "Develop custom report generation and export functionality (CSV, PDF).",
-      "Optimize performance for larger datasets.",
-      "Follow UI/UX guidelines and mockups provided by the design team.",
-      "Keep the employer updated on progress and raise any blockers."
-    ]
-  }
+  "summary": "The meeting discussed the tasks required to finalize the quarterly report. John was assigned to gather and compile sales data using the shared template, coordinate with Sean Mukherjee for marketing input, and update the project management tool with proper task assignments. All tasks need to be completed by Friday, with a final review before submission.",
+  "todo_work": [
+    "Gather and compile sales data from the last quarter using the shared template and send it to the finance team by Friday.",
+    "Coordinate with Sean Mukherjee to get updated graphics and charts for the quarterly presentation by tomorrow.",
+    "Update the project management tool with proper task assignments by the end of the day.",
+    "Send an update to the meeting organizer once all tasks are completed for a final review."
+  ]
 }
 ```
