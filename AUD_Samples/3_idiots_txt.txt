@@ -1,0 +1,38 @@
+🗣 Brian:
+"Alright, everyone, let’s get started. First off—how’s everyone doing? Steve, Chris, did you guys survive Monday?"
+
+🗣 Steve:
+"Man, barely! I woke up and immediately regretted all my weekend choices. But yeah, I’m here. Chris, how about you?"
+
+🗣 Chris:
+"Oh, same here. I stayed up way too late gaming last night. My sleep schedule is a disaster at this point."
+
+🗣 Brian:
+"sighs I don’t know why I expected anything different from you two. Anyway, let’s get to work before this turns into a therapy session."
+
+🗣 Brian:
+"now, let’s go over our progress. Steve, can you update us on the frontend work?"
+
+🗣 Steve:
+"Sure! So, the homepage UI is almost complete, but I still need to fix some responsiveness issues. Also, I was trying out a new font style, but I think we should discuss if we want to change it. Chris, I’ll need some API endpoints soon so I can integrate authentication."
+
+🗣 Brian:
+"Sounds good, Steve. Try to finalize those fixes by Friday. Chris, how’s backend development going?"
+
+🗣 Chris:
+"Not bad! I’ve completed the database schema, and the user authentication API is 80% done. I just need to test it. Also, Steve, I saw your UI design—looking sleek! But let’s make sure it aligns with the backend structure. I’ll send you the API documentation by tomorrow."
+
+🗣 Steve:
+"Appreciate it, Chris! And yeah, I’ll review the docs once you send them."
+
+🗣 Brian:
+"Awesome! By the way, have either of you tested the site on mobile yet?"
+
+🗣 Steve:
+"Yeah, I did a quick test. It looks fine on most devices, but some buttons get misaligned on smaller screens."
+
+🗣 Chris:
+"Wait, I thought we agreed to make it responsive from the start? Steve, don’t make me write an extra API just to fix your buttons."
+
+🗣 Steve:
+"laughs Chill, Chris, I’m on it! It’ll be fixed by tomorrow."
