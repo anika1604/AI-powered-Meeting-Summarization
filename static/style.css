@@ -1,0 +1,297 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Nunito:wght@400;600&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #EAEAEA;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section */
+.hero {
+    background: #2DAA9E;
+    color: white;
+    padding: 40px 20px;
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    position: relative;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Hero Content */
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Logo */
+.logo {
+    width: 80px;
+    height: 80px;
+}
+
+/* Heading Enhancement */
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #EAEAEA;
+    position: relative;
+    display: inline-block;
+}
+
+/* Subtle Underline Effect */
+.hero h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 4px;
+    background: #66D2CE;
+    border-radius: 4px;
+}
+
+/* Subtitle */
+.hero p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 12px;
+    opacity: 0.9;
+}
+
+/* Upload & Live Recording Section */
+.upload-record-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.container {
+    background: #E3D2C3;
+    padding: 20px;
+    width: 320px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
+button {
+    padding: 14px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    width: 100%;
+}
+
+#startRecording {
+    background: #28a745;
+    color: white;
+}
+
+#stopRecording {
+    background: #dc3545;
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.07);
+    filter: brightness(1.15);
+}
+
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Choose File Button */
+input[type="file"] {
+    display: block;
+    margin: 10px auto;
+    padding: 12px;
+    border: 2px dashed #2DAA9E;
+    background-color: #E3D2C3;
+    color: #333;
+    border-radius: 8px;
+    width: 90%;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+input[type="file"]::file-selector-button {
+    background:#2DAA9E;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background:#66D2CE;
+    transform: scale(1.05);
+}
+
+/* Insights Section */
+.insights-container {
+    background: #2DAA9E;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Individual Insight Boxes */
+.box {
+    background: #E3D2C3;
+    padding: 15px;
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Inner Content */
+.info {
+    background: #E3D2C3;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.generated {
+    background: #2DAA9E;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 8px;
+    color: white;
+    font-weight: bold;
+}
+
+#actions{
+    text-align: left;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+.dark-mode .hero h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 4px;
+    background: black;
+    border-radius: 4px;
+}
+.dark-mode .hero {
+    background: #1f3a47;
+    color: #f0f0f0;
+}
+
+.dark-mode .container {
+    background: #2c3e50;
+    color: #f0f0f0;
+}
+
+.dark-mode .box {
+    background: #34495e;
+    color: #f0f0f0;
+}
+
+.dark-mode .generated {
+    background: #1f3a47;
+    color: #f0f0f0;
+}
+
+.dark-mode button {
+    background: #3498db;
+    color: #f0f0f0;
+}
+
+.dark-mode input[type="file"] {
+    border-color: #3498db;
+    background-color: #2c3e50;
+    color: #f0f0f0;
+}
+.dark-mode .insights-container {
+    background: #1f3a47;
+   
+}
+
+.dark-mode input[type="file"]::file-selector-button {
+    background: #3498db;
+    color: #f0f0f0;
+}
+
+.dark-mode .info {
+    background: #2c3e50;
+    color: #f0f0f0;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed; /* Use fixed positioning to keep it at the top-right */
+    top: 10px; /* Adjust the distance from the top */
+    right: 10px; /* Adjust the distance from the right */
+    padding: 8px 12px; /* Smaller padding for a smaller button */
+    border: none;
+    border-radius: 20px; /* Rounded corners for a modern look */
+    background: black;
+    color: white;
+    cursor: pointer;
+    font-size: 12px; /* Smaller font size */
+    transition: background 0.3s ease, transform 0.2s ease;
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    width: auto; /* Override the default button width */
+}
+
+.dark-mode-toggle:hover {
+    background:grey;
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .upload-record-container, .insights-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        width: 90%;
+    }
+}
