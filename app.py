@@ -10,9 +10,14 @@ def read_json_file():
 
 
 @app.route('/')
-def home():
+def index():
     json_data = read_json_file()
     return render_template("index.html", data=json_data)
+
+@app.route('/home')
+def home():
+    json_data = read_json_file()
+    return render_template('home.html', data=json_data)
 
 
 if __name__ == '__main__':
