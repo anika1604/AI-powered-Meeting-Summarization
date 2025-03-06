@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Backend</title>
+</head>
+<body>
+
+    <h1>Trying Backend</h1>
+
+    <h2>Meeting Summary</h2>
+
+    <p>{{ data["summary"]["meeting_summary"] }}</p>
+
+    <h2>TO-DOs</h2>
+
+    <ul>
+
+        {% for jobs in data["todo_work"]["action_items"] %}
+            <li>{{ jobs }}</li>
+        {% endfor %}
+
+    </ul>
+    
+</body>
+</html>

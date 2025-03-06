@@ -1,0 +1,16 @@
+{
+  "summary": {
+    "meeting_summary": "The meeting discussed the assignment of a new feature development task for the reporting dashboard. The goal is to enhance the dashboard by adding better filtering options, custom report generation, and export functionality. The feature should be simple, intuitive, and optimized for performance, especially with larger datasets. The deadline for the feature is ideally the next release cycle in three weeks. Sarah will start with the back-end work, review the current code and API endpoints, and integrate the new feature with the existing database and querying system. The employer will provide UI/UX guidelines and mockups. Progress updates and midweek check-ins were agreed upon."
+  },
+  "todo_work": {
+    "action_items": [
+      "Start back-end work for the new reporting dashboard feature.",
+      "Review current code and API endpoints for integration.",
+      "Implement filtering options (date ranges, product categories, customer segments).",
+      "Develop custom report generation and export functionality (CSV, PDF).",
+      "Optimize performance for larger datasets.",
+      "Follow UI/UX guidelines and mockups provided by the design team.",
+      "Keep the employer updated on progress and raise any blockers."
+    ]
+  }
+}

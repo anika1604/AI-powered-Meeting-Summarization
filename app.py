@@ -1,15 +1,19 @@
-import os
-from dotenv import load_dotenv, dotenv_values
-from flask import Flask
-from groq import Groq
+from flask import Flask, render_template
+import json
+
+app = Flask(__name__)
+
+def read_json_file():
+    with open("json_responses/meeting_summary.json", "r") as file:
+        data = json.load(file)
+    return data
 
 
-load_dotenv()
+@app.route('/')
+def home():
+    json_data = read_json_file()
+    return render_template("index.html", data=json_data)
 
-my_api_key = os.getenv("GROQ_API_KEY")
 
-
-client = Groq(
-    api_key=my_api_key,
-)
-
+if __name__ == '__main__':
+    app.run(debug=True)

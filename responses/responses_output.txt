@@ -1,0 +1,28 @@
+<think>
+Alright, I need to generate a JSON response based on the meeting provided. The user has specified the schema with "summary" and "todo_work" keys.
+
+First, I'll read through the meeting notes to extract the main points. The employer assigned Sarah to develop a new reporting dashboard feature with specific requirements like filtering, custom reports, and export options. They also mentioned deadlines and the need for performance optimization.
+
+For the summary, I'll condense these points into a concise paragraph. Then, I'll list the action items under "todo_work", making sure to include starting the back-end work, reviewing code, integrating with existing APIs, following design guidelines, and keeping the employer updated.
+
+I should ensure that the JSON doesn't include any backslashes or special characters as per the user's note. Finally, I'll structure the JSON correctly, avoiding any markdown formatting.
+</think>
+
+```json
+{
+  "summary": {
+    "meeting_summary": "The meeting discussed the assignment of a new feature development task for the reporting dashboard. The goal is to enhance the dashboard by adding better filtering options, custom report generation, and export functionality. The feature should be simple, intuitive, and optimized for performance, especially with larger datasets. The deadline for the feature is ideally the next release cycle in three weeks. Sarah will start with the back-end work, review the current code and API endpoints, and integrate the new feature with the existing database and querying system. The employer will provide UI/UX guidelines and mockups. Progress updates and midweek check-ins were agreed upon."
+  },
+  "todo_work": {
+    "action_items": [
+      "Start back-end work for the new reporting dashboard feature.",
+      "Review current code and API endpoints for integration.",
+      "Implement filtering options (date ranges, product categories, customer segments).",
+      "Develop custom report generation and export functionality (CSV, PDF).",
+      "Optimize performance for larger datasets.",
+      "Follow UI/UX guidelines and mockups provided by the design team.",
+      "Keep the employer updated on progress and raise any blockers."
+    ]
+  }
+}
+```
