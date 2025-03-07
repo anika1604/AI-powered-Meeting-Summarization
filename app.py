@@ -81,7 +81,7 @@ def get_response():
             messages=[
                 {
                     "role": "system",
-                    "content": "You are a meeting summariser  API capable generating summary of meetings that responds in JSON.Scritly follow the json format.Do not include any excess keys.  The JSON schema should include\n{\n\"summary\":{\n}\n\"todo_work\":{\n}\n}\n"
+                    "content": '''You are a meeting summariser  API capable generating summary of meetings that responds in JSON.Scritly follow the json format.Do not include any excess keys.  The JSON schema should include {"summary": {""},"todo_work": [{"assignee":{},"work":{[""]}]},}'''
                 },
                 {
                     "role": "assistant",
@@ -111,6 +111,7 @@ def get_response():
             output_file.write(response)
 
 
+   
 def export_response_as_json(responses_output = "responses_output.txt"):
     filename_response = os.path.dirname(__file__) + f"/responses/{responses_output}"
     cleaned_text = ""
