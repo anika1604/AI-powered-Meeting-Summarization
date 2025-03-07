@@ -1,27 +1,39 @@
 <think>
-Alright, so the user wants me to generate a meeting summary in a specific JSON format. They provided a conversation between two people, John and someone else, discussing tasks related to a quarterly report. The JSON should have two keys: "summary" and "todo_work". 
+Alright, I need to figure out how to respond to the user's request. They want me to act as a meeting summarizer API that generates a JSON summary without any extra keys. They provided a specific schema: {"summary": "", "todo_work": [{"assignee": "", "work": [""]}]}. 
 
-First, I need to extract the key points from the meeting. They talked about finalizing the quarterly report and several tasks John needs to do. The main points are compiling sales data, coordinating with Sean from marketing, and updating the project management tool.
+First, I'll look at the meeting transcript. It starts with some small talk about how everyone is doing after the weekend. Then, Steve gives an update on the front-end work, mentioning the homepage UI is almost done but has responsiveness issues. He also brought up a new font style that needs discussion. Chris then talks about the back-end progress, the database schema, and the user authentication API being 80% complete. He needs to test it and will send API docs to Steve. There's also a discussion about mobile responsiveness and button alignment issues.
 
-Next, for the "summary" field, I should condense these points into a concise paragraph. It should mention the purpose of the meeting, the main tasks, and the deadline.
+So, for the summary, I need to capture the main points: progress on front-end and back-end, the need for design discussion, and the mobile responsiveness issue. 
 
-Then, the "todo_work" should be a list of actionable items. I need to list each task clearly and specifically, ensuring each one is a separate string in the array. I should avoid any extra information, just the tasks as mentioned.
+Next, the todo_work section. Assignees are Steve and Chris. Steve needs to fix responsiveness and finalize UI fixes by Friday. He also needs to review the back-end structure once Chris sends the docs. Chris has to test the authentication API and send the docs to Steve. Also, there's a note about not needing an extra API for buttons, which is a reminder to fix the alignment issues.
 
-I also need to make sure the JSON doesn't include any extra keys beyond what's specified. So, I'll structure it exactly as the user outlined, with "summary" and "todo_work" as top-level keys.
+I need to structure the JSON accordingly, making sure to follow the schema strictly without adding any extra keys. Each task under todo_work should have an assignee and a list of work items. 
 
-I should double-check the tasks to ensure they're all covered: compiling sales data, coordinating with Sean, updating the project tool, and sending an update after completion. Each task should be a separate entry in the "todo_work" array.
+I should double-check the JSON to ensure it's correctly formatted and only includes the specified keys. No markdown, just plain JSON. Also, make sure the summary is concise and covers all the key points from the meeting.
 
-Finally, I'll format the JSON correctly, ensuring proper syntax with commas and brackets. No markdown, just plain JSON as the user requested.
+Finally, present the JSON as the response, ensuring it meets the user's requirements exactly.
 </think>
 
 ```json
 {
-  "summary": "The meeting discussed the tasks required to finalize the quarterly report. John was assigned to gather and compile sales data using the shared template, coordinate with Sean Mukherjee for marketing input, and update the project management tool with proper task assignments. All tasks need to be completed by Friday, with a final review before submission.",
+  "summary": "The team discussed their current progress and challenges. Steve is working on the front-end, focusing on UI responsiveness and font style discussions. Chris is handling the back-end, with the database schema completed and user authentication API nearing completion. The team also addressed mobile responsiveness issues and button alignment problems.",
   "todo_work": [
-    "Gather and compile sales data from the last quarter using the shared template and send it to the finance team by Friday.",
-    "Coordinate with Sean Mukherjee to get updated graphics and charts for the quarterly presentation by tomorrow.",
-    "Update the project management tool with proper task assignments by the end of the day.",
-    "Send an update to the meeting organizer once all tasks are completed for a final review."
+    {
+      "assignee": "Steve",
+      "work": [
+        "Fix responsiveness issues on the homepage UI",
+        "Finalize front-end fixes by Friday",
+        "Review back-end structure documentation once received from Chris"
+      ]
+    },
+    {
+      "assignee": "Chris",
+      "work": [
+        "Test the user authentication API",
+        "Send API documentation to Steve",
+        "Ensure back-end structure aligns with UI design"
+      ]
+    }
   ]
 }
 ```
