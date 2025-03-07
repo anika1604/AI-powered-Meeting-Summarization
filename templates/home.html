@@ -20,6 +20,10 @@
         <button id="darkModeToggle" class="dark-mode-toggle">🌙 Dark Mode</button>
     </header>
 
+    <div id="loadingScreen" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
     <!-- Upload & Live Recording Section -->
     <div class="upload-record-container">
         
@@ -36,9 +40,56 @@
         <div class="container upload-box">
             <h2>Upload Meeting Audio</h2>
             <p>Already have a recorded meeting? Upload and get AI-powered insights!</p>
-            <input type="file" id="fileInput">
-            <button id="submit">Submit</button>
+            <form id="uploadForm">
+                <input type="file" name="file" id="fileInput" required>
+                <button type="submit">Upload File</button>
+            </form>
         </div>
+        <script>
+            const form = document.getElementById('uploadForm');
+            const loadingScreen = document.getElementById("loadingScreen");
+
+            function showLoading() {
+                loadingScreen.style.display = "flex"; 
+            }
+
+            function hideLoading() {
+                loadingScreen.style.display = "none"; 
+            }
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault(); 
+
+                const formData = new FormData(form);  
+
+
+                showLoading();
+
+                fetch("/upload", {
+                    method: "POST",
+                    body: formData
+                })
+                .then(response => response.json())  
+                .then(data => {
+                    console.log(data);  
+                    hideLoading();  
+                    
+
+                    if (data.message) {
+                        // alert(data.message); 
+                        window.location.reload();
+                    } else if (data.error) {
+                        alert(data.error);
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    hideLoading();  // Hide the loading screen in case of an error
+                    alert("An error occurred. Please try again.");
+                });
+            });
+
+        </script>
     </div>
 
     <!-- AI-Generated Insights -->
@@ -47,7 +98,7 @@
             <h3>Transcription</h3>
             <div class="info">Shows full text of the meeting</div>
             <div class="generated">
-                <p id="transcriptionText">Waiting for transcription...</p>
+                <p id="transcriptionText">{{file_contents}}</p>
             </div>
         </div>
 
@@ -69,7 +120,7 @@
                     {% for jobs in data["todo_work"] %}
                         <u><h3>Assignee: {{ jobs["assignee"] }}</h3></u>
                         {% for work in jobs["work"] %}
-                        <div> {{ work }}</div>
+                        <li><div> {{ work }}</div></li>
                         {% endfor %}
                         <br>
                     {% endfor %}

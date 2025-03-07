@@ -11,17 +11,18 @@
 
     <h2>Meeting Summary</h2>
 
-    <p>{{ data["summary"]["meeting_summary"] }}</p>
 
     <h2>TO-DOs</h2>
 
     <ul>
 
-        {% for jobs in data["todo_work"]["action_items"] %}
-            <li>{{ jobs }}</li>
-        {% endfor %}
+
 
     </ul>
+
+    <p>
+        {{data}}
+    </p>
     
 </body>
 </html>

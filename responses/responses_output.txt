@@ -1,38 +1,40 @@
 <think>
-Alright, I need to figure out how to respond to the user's request. They want me to act as a meeting summarizer API that generates a JSON summary without any extra keys. They provided a specific schema: {"summary": "", "todo_work": [{"assignee": "", "work": [""]}]}. 
+Alright, so the user has given me a query where they want me to act as a meeting summarizer API. They specified that the response should be in JSON format, strictly following a certain schema without any extra keys. The schema includes a "summary" field and a "todo_work" array with specific sub-fields.
 
-First, I'll look at the meeting transcript. It starts with some small talk about how everyone is doing after the weekend. Then, Steve gives an update on the front-end work, mentioning the homepage UI is almost done but has responsiveness issues. He also brought up a new font style that needs discussion. Chris then talks about the back-end progress, the database schema, and the user authentication API being 80% complete. He needs to test it and will send API docs to Steve. There's also a discussion about mobile responsiveness and button alignment issues.
+First, I need to understand the user's exact requirements. They provided an example of a meeting conversation between Alex and Emma. My task is to generate a summary and list of action items based on that conversation.
 
-So, for the summary, I need to capture the main points: progress on front-end and back-end, the need for design discussion, and the mobile responsiveness issue. 
+Looking at the conversation, the main points are planning a team-building outing. They discussed options like bowling or trivia night, decided on bowling, set a budget under $300, and assigned tasks like finding a spot, sending invites, and confirming RSVPs.
 
-Next, the todo_work section. Assignees are Steve and Chris. Steve needs to fix responsiveness and finalize UI fixes by Friday. He also needs to review the back-end structure once Chris sends the docs. Chris has to test the authentication API and send the docs to Steve. Also, there's a note about not needing an extra API for buttons, which is a reminder to fix the alignment issues.
+I should extract the key decisions and actions. The summary needs to be concise, capturing the main goal of the meeting. For the todo_work, each task should have an assignee and a description. I need to make sure each task is a separate object within the array.
 
-I need to structure the JSON accordingly, making sure to follow the schema strictly without adding any extra keys. Each task under todo_work should have an assignee and a list of work items. 
+I also need to adhere strictly to the JSON schema provided. That means no extra keys outside of "summary" and "todo_work". Each todo item should have "assignee" and "work" fields, with "work" being an array of strings, even if there's only one task.
 
-I should double-check the JSON to ensure it's correctly formatted and only includes the specified keys. No markdown, just plain JSON. Also, make sure the summary is concise and covers all the key points from the meeting.
+I should avoid any markdown and keep the JSON properly formatted. Let me structure the summary to reflect the planning of the outing and the budget. Then, list each action item with the responsible person.
 
-Finally, present the JSON as the response, ensuring it meets the user's requirements exactly.
+Double-checking to ensure all tasks from the conversation are included and correctly assigned. Alex is handling the venue options, Emma is creating the invite, and both are confirming RSVPs. 
+
+Finally, I'll format the JSON accordingly, making sure it's clean and follows the specified structure without any additional keys or formatting issues.
 </think>
 
 ```json
 {
-  "summary": "The team discussed their current progress and challenges. Steve is working on the front-end, focusing on UI responsiveness and font style discussions. Chris is handling the back-end, with the database schema completed and user authentication API nearing completion. The team also addressed mobile responsiveness issues and button alignment problems.",
+  "summary": "The meeting discussed planning a team-building outing, with the decision to organize a bowling night. The budget is set to be under $300, and the goal is to schedule the event for next Friday.",
   "todo_work": [
     {
-      "assignee": "Steve",
-      "work": [
-        "Fix responsiveness issues on the homepage UI",
-        "Finalize front-end fixes by Friday",
-        "Review back-end structure documentation once received from Chris"
-      ]
+      "assignee": "Alex",
+      "work": ["Research local bowling spots that offer food and drinks"]
     },
     {
-      "assignee": "Chris",
-      "work": [
-        "Test the user authentication API",
-        "Send API documentation to Steve",
-        "Ensure back-end structure aligns with UI design"
-      ]
+      "assignee": "Alex",
+      "work": ["Send options for the venue to Emma"]
+    },
+    {
+      "assignee": "Emma",
+      "work": ["Create and send out the team invite for next Friday"]
+    },
+    {
+      "assignee": "Alex",
+      "work": ["Confirm the spot and ensure everyone RSVPs"]
     }
   ]
 }

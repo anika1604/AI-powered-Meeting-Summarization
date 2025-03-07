@@ -44,6 +44,20 @@ def read_json_file():
     
     return data
 
+def read_transcripts():
+    primary_path = "transcription/transcription_output.txt"
+    secondary_path = "transcription/default.txt"
+
+    if os.path.exists(primary_path):
+        file_path = primary_path
+    else:
+        file_path = secondary_path
+
+    with open(file_path, 'r') as file:
+        data = file.read()
+
+    return data
+
 def create_transcripts():
 
     # Specify the path to the audio file
@@ -148,12 +162,15 @@ def export_response_as_json(responses_output = "responses_output.txt"):
 @app.route('/')
 def index():
     json_data = read_json_file()
-    return render_template("index.html", data=json_data)
+    with open('transcription/transcription_output.txt', 'r') as file:
+        file_contents = file.read()
+        return render_template("index.html", data=file_contents)
 
 @app.route('/home')
 def home():
     json_data = read_json_file()
-    return render_template('home.html', data=json_data)
+    file_contents = read_transcripts()
+    return render_template('home.html', data=json_data, file_contents=file_contents)
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
