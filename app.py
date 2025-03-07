@@ -159,14 +159,14 @@ def export_response_as_json(responses_output = "responses_output.txt"):
         output_file.write(cleaned_text)
 
 
-@app.route('/')
+@app.route('/index')
 def index():
     json_data = read_json_file()
     with open('transcription/transcription_output.txt', 'r') as file:
         file_contents = file.read()
         return render_template("index.html", data=file_contents)
 
-@app.route('/home')
+@app.route('/')
 def home():
     json_data = read_json_file()
     file_contents = read_transcripts()

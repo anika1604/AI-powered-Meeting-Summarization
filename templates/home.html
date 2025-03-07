@@ -118,11 +118,15 @@
                 <ul id="actionsList">
                     <!-- <li>No action items yet.</li> -->
                     {% for jobs in data["todo_work"] %}
+                    {% if jobs == "No action items yet." %}
+                        <p>No action items yet.</p>
+                    {% else %}
                         <u><h3>Assignee: {{ jobs["assignee"] }}</h3></u>
                         {% for work in jobs["work"] %}
                         <li><div> {{ work }}</div></li>
                         {% endfor %}
                         <br>
+                        {% endif %}
                     {% endfor %}
                 </ul>
             </div>
