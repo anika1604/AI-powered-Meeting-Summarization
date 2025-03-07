@@ -1,21 +1,21 @@
 {
-  "summary": "The team discussed their current progress and challenges. Steve is working on the front-end, focusing on UI responsiveness and font style discussions. Chris is handling the back-end, with the database schema completed and user authentication API nearing completion. The team also addressed mobile responsiveness issues and button alignment problems.",
+  "summary": "The meeting discussed planning a team-building outing, with the decision to organize a bowling night. The budget is set to be under $300, and the goal is to schedule the event for next Friday.",
   "todo_work": [
     {
-      "assignee": "Steve",
-      "work": [
-        "Fix responsiveness issues on the homepage UI",
-        "Finalize front-end fixes by Friday",
-        "Review back-end structure documentation once received from Chris"
-      ]
+      "assignee": "Alex",
+      "work": ["Research local bowling spots that offer food and drinks"]
     },
     {
-      "assignee": "Chris",
-      "work": [
-        "Test the user authentication API",
-        "Send API documentation to Steve",
-        "Ensure back-end structure aligns with UI design"
-      ]
+      "assignee": "Alex",
+      "work": ["Send options for the venue to Emma"]
+    },
+    {
+      "assignee": "Emma",
+      "work": ["Create and send out the team invite for next Friday"]
+    },
+    {
+      "assignee": "Alex",
+      "work": ["Confirm the spot and ensure everyone RSVPs"]
     }
   ]
 }
