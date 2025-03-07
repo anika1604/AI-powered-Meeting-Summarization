@@ -88,6 +88,8 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
+
+
 .container:hover {
     transform: translateY(-5px);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
@@ -178,20 +180,34 @@ input[type="file"]::file-selector-button:hover {
     width: 300px;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    transition: 0.4s ease-in-out;
+}
+.box:hover {
+    transform: translateY(-7px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.9);
+}
+
+.in_text{
+    font-family: sans-serif;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 /* Inner Content */
 .info {
-    background: #E3D2C3;
-    padding: 10px;
+    background:  #A79687;
+    color: white;
+    padding: 5px;
     border-radius: 8px;
+    font-family: sans-serif;
     font-weight: bold;
 }
 
 .generated {
     background: #2DAA9E;
-    padding: 10px;
+    border: 5px solid #1E7C71;
+    padding: 5px;
     border-radius: 8px;
     margin-top: 8px;
     color: white;
@@ -290,4 +306,62 @@ body.dark-mode {
     .box {
         width: 90%;
     }
+}
+/* Loading Animation - Centered Pulsing Dots */
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.dots {
+    display: flex;
+    gap: 6px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #2DAA9E;
+    border-radius: 50%;
+    animation: pulse 1.2s infinite ease-in-out;
+}
+
+.dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.4); opacity: 1; }
+}
+.text-container {
+    display: block;
+    margin: 10px 0;
+}
+
+/* Style for Read More and Read Less buttons */
+.read-more, .read-less {
+    background-color: #2DAA9E;
+    color: white;
+    border: none;
+    padding: 5px 10px; /* Smaller padding for a smaller button */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px; /* Smaller font size */
+    margin: 10px auto; /* Center the button horizontally */
+    display: block; /* Make the button a block element for centering */
+    width: fit-content; /* Adjust width to fit the content */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for buttons */
+.read-more:hover, .read-less:hover {
+    background-color: #66D2CE;
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+.al{
+    text-align: left;
+
 }

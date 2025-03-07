@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Meeting Assistant</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="logo1.png"> <!-- Favicon added -->
+    <link rel="icon" type="image/png" href="logo1.png">
 </head>
 <body>
 
     <!-- Hero Section -->
     <header class="hero">
         <div class="hero-content">
-            <img src="logo.png" alt="Logo" class="logo"> <!-- Logo added -->
+            <img src="logo.png" alt="Logo" class="logo">
             <h1>AI Meeting Summarizer</h1>
         </div>
         <p>Upload a recording or record live to get instant transcriptions, summaries, and action items!</p>
-         <!-- Dark Mode Toggle Button -->
         <button id="darkModeToggle" class="dark-mode-toggle">🌙 Dark Mode</button>
     </header>
 
@@ -32,18 +31,30 @@
             <p id="recordingStatus">Not Recording</p>
         </div>
 
-        <!-- Upload Section -->
-        <div class="container upload-box">
-            <h2>Upload Meeting Audio</h2>
-            <p>Already have a recorded meeting? Upload and get AI-powered insights!</p>
-            <input type="file" id="fileInput">
+       <!-- Upload Section -->
+<div class="container upload-box">
+    <h2>Upload Meeting Audio</h2>
+    <p>Already have a recorded meeting? Upload and get AI-powered insights!</p>
+    
+    <input type="file" id="fileInput">
+    
+    <!-- Generate Details Button -->
+    <button id="generateDetails" disabled>Generate Details</button>
+
+    <!-- Loading Animation (Centered Pulsing Dots) -->
+    <div id="loading" class="loading-spinner" style="display: none;">
+        <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
         </div>
     </div>
+</div>
 
     <!-- AI-Generated Insights -->
     <div class="insights-container">
         <div class="box">
-            <h3>Transcription</h3>
+            <h3 class="in_text">TRANSCRIPTION</h3>
             <div class="info">Shows full text of the meeting</div>
             <div class="generated">
                 <p id="transcriptionText">Waiting for transcription...</p>
@@ -51,7 +62,7 @@
         </div>
 
         <div class="box">
-            <h3>Summary</h3>
+            <h3 class="in_text">SUMMARY</h3>
             <div class="info">Condensed key points of the meeting</div>
             <div class="generated">
                 <p id="summaryText">No summary available yet.</p>
@@ -59,11 +70,11 @@
         </div>
 
         <div class="box">
-            <h3>Action Items</h3>
+            <h3 class="in_text">ACTION ITEMS</h3>
             <div class="info">Key tasks assigned from the meeting</div>
             <div class="generated">
-                <ul id="actionsList">
-                    <li>No action items yet.</li>
+                <ul class = "al" id="actionsList">
+                    <li class ="al">No action items yet.</li>
                 </ul>
             </div>
         </div>
