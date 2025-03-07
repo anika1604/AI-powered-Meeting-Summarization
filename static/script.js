@@ -2,9 +2,11 @@
 document.getElementById("fileInput").addEventListener("change", function () {
     let transcriptionText = document.getElementById("transcriptionText");
     let summaryText = document.getElementById("summaryText");
+    let actionsList = document.getElementById("actionsList");
 
     transcriptionText.innerText = "Processing audio...";
     summaryText.innerText = "Generating summary...";
+    actionsList.innerText = "Generating actions..."
 
     // setTimeout(() => {
     //     transcriptionText.innerText = "Client: We need to finalize the report by Friday. Manager: Okay, I'll assign tasks.";
