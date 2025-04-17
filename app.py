@@ -18,7 +18,7 @@ client = Groq(
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-ALLOWED_EXTENSIONS = {'mp3', 'wav', 'ogg', 'flac'}
+ALLOWED_EXTENSIONS = {'mp3', 'wav', 'ogg', 'flac', 'mp4'}
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -66,6 +66,8 @@ def create_transcripts():
     folder_path = "transcription"
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
+
+    
 
     with open(filename_audio, "rb") as file:
         transcription = client.audio.transcriptions.create(
