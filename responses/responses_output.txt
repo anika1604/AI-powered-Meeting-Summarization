@@ -1,0 +1,43 @@
+<think>
+Alright, I need to figure out how to respond to the user's query. They want me to act as a meeting summarizer API that generates a JSON summary. The user provided a conversation between Alex and Emma about planning a team-building outing. 
+
+First, I should parse the conversation. They discussed organizing a team-building activity, specifically bowling night, with a budget under $300. They also talked about sending out invites and aiming for next Friday.
+
+The user specified the JSON schema: {"summary": "", "todo_work": [{"assignee": "", "work": [""]}]}. I need to strictly follow this without adding extra keys.
+
+For the summary, I'll condense the main points: deciding on bowling, budget, venue, invite, and RSVPs. 
+
+Next, the todo_work section. Assignees are Alex and Emma. Alex needs to check local spots and send options. Emma has to create the invite, send it, confirm the spot, and handle RSVPs.
+
+I should structure the JSON accordingly, ensuring each task is listed under the correct assignee. No extra keys, just what's specified.
+
+I should also make sure the JSON is properly formatted and valid. Let me double-check the structure to avoid any mistakes. 
+
+Finally, I'll present the JSON as the response, keeping it clean and only including the necessary keys as per the user's instructions.
+</think>
+
+```json
+{
+  "summary": "The meeting discussed organizing a team-building outing. The activity chosen was a bowling night, with a budget of under $300. Alex will check local spots that offer food and drinks, send options to Emma, and confirm the venue. Emma will create and send out the invite to the team, with the aim of scheduling the event for next Friday. The goal is to boost team morale and ensure everyone can participate.",
+  "todo_work": [
+    {
+      "assignee": "Alex",
+      "work": [
+        "Check local bowling spots",
+        "Ensure spots offer food and drinks",
+        "Send venue options to Emma",
+        "Confirm the venue"
+      ]
+    },
+    {
+      "assignee": "Emma",
+      "work": [
+        "Create the invitation",
+        "Send the invite to the team",
+        "Confirm the event for next Friday",
+        "Ensure everyone RSVPs"
+      ]
+    }
+  ]
+}
+```
